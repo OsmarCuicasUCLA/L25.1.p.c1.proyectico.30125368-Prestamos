@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prestamos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="prestamoForm">
+        <h3>Formulario del Prestamo</h3>
+        <label for="prestamoForm_inCliente">Cliente</label>
+        <input type="text" id="prestamoForm_inCliente" placeholder="Pedro">
+        <label for="prestamoForm_inCodigo">Codigo</label>
+        <input type="text" id="prestamoForm_inCodigo" placeholder="1111">
+        <label for="prestamoForm_inprestamo">Prestamo</label>
+        <input type="text" id="prestamoForm_inPrestamo" placeholder="1000">
+        <label for="prestamoForm_inMeses">Meses</label>
+        <input type="text" id="prestamoForm_inMeses" placeholder="5">
+        <button id="prestamoForm_btProcesar">Procesar</button>
+    </section>
+    <section id="mainForm">
+        <h3>Reporte de Oficina</h3>
+        <label for="mainForm_MontoFinal">Monto Final Disponible</label>
+        <input type="text" id="mainForm_MontoFinal" disabled>
+        <label for="mainForm_Clientes2Meses">Cantidad de Clientes que Pidieron por 2 Meses</label>
+        <input type="text" id="mainForm_Clientes2Meses" disabled>
+        <label for="mainForm_MenorPrestamo">Cliente que Pidio el Prestamo Menor</label>
+        <input type="text" id="mainForm_MenorPrestamo" disabled>
+    </section>
+    <section id="registrosPrestamos">
+        <h3>Prestamos Registrados</h3>
+        <table id="prestamosTabla">
+            <tr>
+                <th>Cliente</th>
+                <th>Codigo</th>
+                <th>Prestamo</th>
+                <th>Meses</th>
+            </tr>
+        </table>
+    </section>
+    <section id="options">
+        <h3>Opciones</h3>
+        <button id="btnMostrarForm">Mostrar Formulario</button>
+        <button id="btnMostrarReporte">Mostrar Reporte</button>
+        <button id="btnMostrarTabla">Mostrar Tabla</button>
+    </section>
+</body>
+<script type="module">
+    import Cl_Controlador from "./Controllers/Cl_Controlador.js"
+    new Cl_Controlador();
+    document.getElementById("mainForm").style.display = 'none'
+    document.getElementById("registrosPrestamos").style.display = 'none'
+</script>
+</html>
